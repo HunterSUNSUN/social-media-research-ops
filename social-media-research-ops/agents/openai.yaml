@@ -1,0 +1,4 @@
+interface:
+  display_name: "Social Media Research Ops"
+  short_description: "Competitor social research into reusable ops plans"
+  default_prompt: "Use $social-media-research-ops to research competitor social accounts and turn findings into an Obsidian-ready content strategy."
