@@ -95,6 +95,15 @@ Clearly separate observed evidence from strategic inference.
 - Read-only account behavior unless the user explicitly authorizes publishing actions.
 - Durable notes that another research session can resume without reconstructing context.
 
+## Visual Showcase
+
+The repository includes a five-page, 1080 × 1440 Xiaohongshu carousel introducing the Skill:
+
+- [Open the interactive HTML](showcase/index.html)
+- [Browse the exported PNG pages](showcase/exports)
+
+![Social Media Research Ops carousel cover](showcase/exports/social-media-research-ops-1.png)
+
 ## 中文说明
 
 这是一个面向 Codex 的社媒研究与运营 Skill，用于把真实平台浏览转化为可复用的方法论和执行方案。它覆盖竞品账号分层、帖子与评论区拆解、平台推流逻辑判断、内容定位、选题生成，以及 Obsidian 分类沉淀。
