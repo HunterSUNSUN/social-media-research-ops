@@ -13,6 +13,7 @@ Use these templates when creating Obsidian notes for social media research.
 
 - 账号/关键词：
 - 浏览范围：
+- 外部来源包：
 - 是否遇到验证或限制：
 
 ## 1. 平台角色判断
@@ -26,6 +27,7 @@ Use these templates when creating Obsidian notes for social media research.
 ### 样本 1：
 
 - 链接：
+- 来源工具/采集时间：
 - 账号/作者：
 - 定位：
 - 可见数据：
@@ -76,6 +78,8 @@ Use these templates when creating Obsidian notes for social media research.
 - 平台：
 - 链接：
 - 作者：
+- 来源工具/采集时间：
+- 查询或采样边界：
 - 日期：
 - 可见互动：
 - 内容形式：图文 / 视频 / thread / 评论讨论 / 搜索结果
