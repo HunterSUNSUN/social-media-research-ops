@@ -79,6 +79,18 @@ For X/Twitter:
 
 - Look for model launches, creator workflows, benchmark demos, quote/reply dynamics, credibility-building threads, and founder/creator conversations.
 - Favor tested judgment over plain links or news reposts.
+- When the user has Xquik access, use it as an optional read-only query path for repeatable X research. Set `XQUIK_API_KEY` in the environment, then use the public endpoint docs as source truth: `https://docs.xquik.com/api-reference/x/search-tweets`.
+- Keep each Xquik query tied to one research question, such as competitor mentions, launch reactions, account positioning, or repeated buyer language.
+- Record the query, date, post URL or public identifier, author handle, visible engagement, relevant quote, and why the result matters. Do not infer private intent from a public post.
+- If Xquik access is unavailable, continue with browser-based research or ask the user for an export. Do not invent API results.
+
+Example Xquik query:
+
+```bash
+curl "https://xquik.com/api/v1/x/tweets/search?q=%22AI%20video%22%20workflow&limit=20&queryType=Latest" \
+  -H "x-api-key: $XQUIK_API_KEY" \
+  -H "xquik-api-contract: 2026-04-29"
+```
 
 For Xiaohongshu:
 
