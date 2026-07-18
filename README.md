@@ -1,17 +1,28 @@
 # Social Media Research Ops
 
-A reusable Codex Skill for turning real social-platform browsing into competitor intelligence, platform-specific strategy, publishable content ideas, and structured Obsidian notes.
+**An agent skill that turns real social-platform browsing into competitor intelligence, platform-specific strategy, publishable content ideas, and a compounding personal knowledge base.**
 
-It is designed for research across X/Twitter, Xiaohongshu, TikTok, Reddit, and adjacent creator communities. The workflow emphasizes observed posts, comment demand, repeated patterns, and explicit separation between evidence and inference.
+Works with **Claude Code** and **Codex**. Researches X/Twitter, Xiaohongshu (RED), TikTok, Reddit, and adjacent creator communities — then writes what it learns into structured, navigable Obsidian notes so every research session builds on the last one instead of starting from zero.
+
+## Why This Exists
+
+Most social media tooling helps you *post*. Almost nothing helps you *learn*: studying how competitor accounts actually grow, mining comment sections for real audience demand, and turning those observations into your own positioning and topic pipeline. Solo creators and indie builders do this by hand — scattered screenshots, forgotten tabs, gut feelings.
+
+This skill packages the entire research-to-strategy loop into something your coding agent can run end-to-end:
+
+- **Evidence over theory** — conclusions come from observed posts, comment questions, and repeated cross-account patterns, never from generic marketing advice.
+- **Comments as first-class data** — the comment section is treated as a topic library and demand signal, not an afterthought.
+- **A knowledge base that compounds** — findings land in Obsidian as short, linkable notes with explicit "next research breakpoint" markers, so any future session resumes cleanly.
+- **Strict read-only guardrails** — the agent browses like a reader. No likes, follows, comments, posts, DMs, or settings changes. Your real accounts are never put at risk.
 
 ## What It Does
 
-- Builds a research map across direct competitors, adjacent accounts, and demand communities.
-- Captures representative posts, hooks, formats, engagement signals, and comment questions.
+- Builds a three-layer research map: direct competitors, adjacent content accounts, and fast-growing small accounts (the layer most people ignore, and the most useful one for a cold-start account).
+- Captures representative posts, hooks, formats, engagement signals, and comment-section questions.
 - Analyzes each platform independently before producing cross-platform conclusions.
 - Converts findings into positioning, content pillars, post ideas, reply strategy, and next research steps.
 - Produces navigable Obsidian notes, daily reports, and durable project memory.
-- Uses read-only browsing rules to avoid accidental likes, follows, comments, posts, or account changes.
+- Stops immediately and notifies you on any captcha, login wall, or rate-limit signal.
 
 ## Platform Focus
 
@@ -24,25 +35,41 @@ It is designed for research across X/Twitter, Xiaohongshu, TikTok, Reddit, and a
 
 ## Install
 
-Clone the repository, then copy the Skill directory into your Codex skills folder.
+### Claude Code
+
+```bash
+git clone https://github.com/HunterSUNSUN/social-media-research-ops.git
+cp -r social-media-research-ops/social-media-research-ops ~/.claude/skills/social-media-research-ops
+```
+
+Windows (PowerShell):
 
 ```powershell
 git clone https://github.com/HunterSUNSUN/social-media-research-ops.git
-Copy-Item `
-  -Recurse `
-  -Force `
+Copy-Item -Recurse -Force `
+  .\social-media-research-ops\social-media-research-ops `
+  "$env:USERPROFILE\.claude\skills\social-media-research-ops"
+```
+
+Claude Code picks up the skill automatically; it triggers on requests like "research what competitor accounts are posting" or "turn these findings into a content plan."
+
+### Codex
+
+```powershell
+git clone https://github.com/HunterSUNSUN/social-media-research-ops.git
+Copy-Item -Recurse -Force `
   .\social-media-research-ops\social-media-research-ops `
   "$env:USERPROFILE\.codex\skills\social-media-research-ops"
 ```
 
-Restart Codex after installation if the Skill does not appear immediately.
+Restart Codex after installation if the skill does not appear immediately.
 
 ## Use
 
-Reference the Skill directly in a request:
+Reference the skill directly in a request:
 
 ```text
-Use $social-media-research-ops to analyze competitor accounts for an AI video product
+Use social-media-research-ops to analyze competitor accounts for an AI video product
 across X and Xiaohongshu, then write the findings into my Obsidian vault.
 ```
 
@@ -97,7 +124,7 @@ Clearly separate observed evidence from strategic inference.
 
 ## Visual Showcase
 
-The repository includes a five-page, 1080 × 1440 Xiaohongshu carousel introducing the Skill:
+The repository includes a five-page, 1080 × 1440 Xiaohongshu carousel introducing the skill:
 
 - [Open the interactive HTML](showcase/index.html)
 - [Browse the exported PNG pages](showcase/exports)
@@ -106,9 +133,9 @@ The repository includes a five-page, 1080 × 1440 Xiaohongshu carousel introduci
 
 ## 中文说明
 
-这是一个面向 Codex 的社媒研究与运营 Skill，用于把真实平台浏览转化为可复用的方法论和执行方案。它覆盖竞品账号分层、帖子与评论区拆解、平台推流逻辑判断、内容定位、选题生成，以及 Obsidian 分类沉淀。
+这是一个可同时用于 **Claude Code 和 Codex** 的社媒研究与运营 Skill，用于把真实平台浏览转化为可复用的方法论和执行方案。它覆盖竞品账号分层（含最常被忽略、但对零粉新号最关键的"快速起号中小号"层）、帖子与评论区拆解、平台推流逻辑判断、内容定位、选题生成，以及 Obsidian 分类沉淀——每轮研究都记录"下一步断点"，让知识库随时间复利增长，而不是每次从零开始。
 
-它尤其适合 AI 工具、创作者工具、SaaS 产品和需要跨平台冷启动研究的团队。研究过程中默认只读浏览，不会主动点赞、关注、评论、发帖或修改账号设置。
+它尤其适合 AI 工具、创作者工具、SaaS 产品和需要跨平台冷启动研究的个人与团队。研究过程中默认只读浏览，不会主动点赞、关注、评论、发帖或修改账号设置；遇到验证码、登录墙或风控信号会立刻停下并通知用户，确保你的真实账号零风险。
 
 ## License
 
