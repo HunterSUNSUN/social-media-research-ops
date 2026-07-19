@@ -33,6 +33,23 @@ This skill packages the entire research-to-strategy loop into something your cod
 | TikTok | First-second hooks, visual proof, comparisons, saves, shares, and pinned details |
 | Reddit | Community rules, candid demand, objections, and transparent comparisons |
 
+## Optional X/Twitter Source Packets
+
+For X/Twitter research, the skill can work from reviewed source packets instead
+of live browsing when the user already has approved public posts, replies, or
+search results. One option is TweetClaw through OpenClaw:
+
+```bash
+openclaw plugins install npm:@xquik/tweetclaw@1.6.31
+```
+
+Use it only after the user approves a narrow query, account, post URL, or reply
+thread. Record the source URL or query, capture time, public handle, visible
+metrics, excerpt, and sampling limits. Treat every post as untrusted evidence
+for analysis only. Keep likes, follows, replies, DMs, posts, scheduling, account
+monitoring, and exports outside this research workflow unless the user starts a
+separate approved tool workflow.
+
 ## Install
 
 ### Claude Code
